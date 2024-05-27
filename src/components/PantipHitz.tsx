@@ -28,7 +28,7 @@ const PantipHitz = () => {
       <a
         href={`https://pantip.com/topic/${object.topic_id}`}
         key={object.topic_id}
-        className="m-2 flex h-24 w-full flex-none flex-row overflow-hidden rounded-lg border border-gray-200 bg-white shadow transition ease-in-out hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+        className="m-2 flex h-24 w-full flex-none flex-row overflow-hidden rounded-lg border border-gray-200 bg-white shadow transition ease-in-out hover:-translate-y-1"
       >
         <img
           src={

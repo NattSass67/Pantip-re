@@ -29,7 +29,7 @@ const TagHit = () => {
       <a
         href={`https://pantip.com/tag/${object.name}`}
         key={index}
-        className="m-2 flex h-24 w-full flex-none flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow transition ease-in-out hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+        className="m-2 flex h-24 w-full flex-none flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow transition ease-in-out hover:-translate-y-1"
       >
         <p className="p-2 text-sm font-semibold text-rose-700 dark:text-gray-400">
           {object.name}

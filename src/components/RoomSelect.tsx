@@ -56,9 +56,7 @@ const RoomSelect = () => {
 
   return (
     <div className="relative mb-4 flex flex-col">
-      <div className="text-lg font-semibold text-rose-700 dark:text-gray-400">
-        Choose room
-      </div>
+      <div className="text-lg font-semibold text-rose-700">Choose room</div>
       <button
         onClick={scrollLeft}
         aria-label="Save"

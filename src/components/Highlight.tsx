@@ -37,9 +37,7 @@ const Highlight = () => {
 
   return (
     <div className="mt-4 flex flex-col">
-      <div className="text-lg font-semibold text-rose-700 dark:text-gray-400">
-        Highlight
-      </div>
+      <div className="text-lg font-semibold text-rose-700">Highlight</div>
 
       <div className="mx-2 flex flex-row flex-wrap items-center justify-center">
         {highlightList}
