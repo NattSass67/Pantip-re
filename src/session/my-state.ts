@@ -41,7 +41,6 @@ export const fetchContent = () => {
       const pick = await getPantipPick();
       const hitz = await getPantipHitz();
       if (
-        room === null ||
         sidebar === null ||
         highlight === null ||
         announce === null ||

@@ -89,7 +89,7 @@ const RoomSelect = () => {
 
       <div
         ref={scrollContainerRef}
-        className="no-scrollbar mx-16 flex flex-row overflow-x-auto"
+        className="no-scrollbar mx-16 flex h-32 flex-row overflow-x-auto"
       >
         {roomList}
       </div>
