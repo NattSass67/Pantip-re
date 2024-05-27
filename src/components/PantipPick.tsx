@@ -30,7 +30,7 @@ const PantipPick = () => {
       <a
         href={`https://pantip.com/topic/${object.topic_id}`}
         key={object.topic_id}
-        className="m-2 flex h-24 w-full flex-none flex-row overflow-hidden rounded-lg border border-gray-200 bg-white shadow transition ease-in-out hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800"
+        className="m-2 flex h-24 w-full flex-none flex-row overflow-hidden rounded-lg border border-gray-200 bg-white shadow transition ease-in-out hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
       >
         <img
           src={
@@ -110,9 +110,7 @@ const PantipPick = () => {
 
   return (
     <div className="mt-4 flex flex-col bg-rose-50 p-4">
-      <div className="text-lg font-semibold text-rose-700 dark:text-gray-400">
-        Pantip pick
-      </div>
+      <div className="text-lg font-semibold text-rose-700">Pantip pick</div>
 
       <div className="flex w-full flex-col items-center justify-center">
         {pickList}

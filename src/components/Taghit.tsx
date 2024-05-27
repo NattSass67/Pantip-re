@@ -125,7 +125,7 @@ const TagHit = () => {
       <div className="sticky top-80">
         {' '}
         {/* fixed item at distance 80 from top of the window need to know more then use your observation */}
-        <div className="flex gap-x-4 text-lg font-semibold text-rose-700 dark:text-gray-400">
+        <div className="flex gap-x-4 text-lg font-semibold text-rose-700">
           Tag hit
           <svg
             width="32px"
