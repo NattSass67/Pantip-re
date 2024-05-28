@@ -937,3 +937,42 @@ export async function getSerch() {
     return null;
   }
 }
+
+export async function getFilterByTag(name: string) {
+  try {
+    const response = await fetch(
+      `https://pantip.com/api/forum-service/tag/tag_topic_trend?tag_name=${name}&limit=10`,
+      {
+        headers: {
+          accept: 'application/json, text/plain, */*',
+          'accept-language': 'en-US,en;q=0.9',
+          'cache-control': 'no-cache',
+          pragma: 'no-cache',
+          priority: 'u=1, i',
+          ptauthorize: 'Basic dGVzdGVyOnRlc3Rlcg==',
+          'sec-ch-ua':
+            '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',
+          'sec-ch-ua-mobile': '?1',
+          'sec-ch-ua-platform': '"Android"',
+          'sec-fetch-dest': 'empty',
+          'sec-fetch-mode': 'cors',
+          'sec-fetch-site': 'same-origin',
+          cookie:
+            'pantip_visitc=se6lnhwSkowGEdlR7; freq.5f73e63e47e7040e00000000=1; iUUID=489d0db5b48244db491f6815482c0755; innity.dmp.cks.innity=1; _gid=GA1.2.2049066026.1716875547; ka_iid=8KrdhWpFKVQsqtJywt7BR; innity.dmp.254.sess.id=55546286.254.1716879181143; ka_sid=H85XYxcYuePvJxYxqqefQT; __gads=ID=d116fbcfafc56a35:T=1716879423:RT=1716879423:S=ALNI_MZVyrLiW4Yei1YreEtHDpUHrBbMjQ; __gpi=UID=00000e31cf03a394:T=1716879423:RT=1716879423:S=ALNI_MYKwtMuRj25viN_xwHHfygoTzkLFA; __eoi=ID=dd5d2b1da9e21d8d:T=1716879423:RT=1716879423:S=AA-AfjZSR9l1QseyOKTsWL6GYeW7; _dc_gtm_UA-10478864-2=1; innity.dmp.254.sess=5.1716879181143.1716879683065.1716879711566; _ga_ZMC2WGXL4Z=GS1.1.1716879181.2.1.1716879724.15.0.0; _ga=GA1.1.1771781601.1716875547',
+          Referer: `https://pantip.com/tag/K-POP`,
+          'Referrer-Policy': 'strict-origin-when-cross-origin',
+        },
+        body: null,
+        method: 'GET',
+      },
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    return null;
+  }
+}
+

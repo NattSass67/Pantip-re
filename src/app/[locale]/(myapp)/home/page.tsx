@@ -4,6 +4,7 @@
 
 import { useEffect } from 'react';
 
+import { FilterModal } from '@/components/FilterModal';
 import { Highlight } from '@/components/Highlight';
 import { PantipHitz } from '@/components/PantipHitz';
 import { PantipPick } from '@/components/PantipPick';
@@ -30,14 +31,15 @@ export default function Home() {
             alt="Logo"
           />
         </div>
-        <div className="flex w-full items-center justify-center">
+        <div className="flex w-full items-center justify-center gap-x-2">
           <SearchBar />
+          <FilterModal />
         </div>
         <RoomSelect />
       </div>
 
       {/* Spacer to push content below fixed header */}
-      <div className="h-80" />
+      <div className="h-56" />
       <Highlight />
       <div className="grid grid-cols-1 md:grid-cols-3">
         <div className="col-span-1 md:col-span-2">

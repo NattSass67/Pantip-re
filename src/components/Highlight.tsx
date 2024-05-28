@@ -24,7 +24,7 @@ const Highlight = () => {
       <a
         href={object.post_url}
         key={index}
-        className="m-8 max-w-64 flex-none overflow-hidden rounded-lg border border-gray-200 bg-white shadow transition ease-in-out hover:-translate-y-1 hover:scale-105 dark:border-gray-700 dark:bg-gray-800"
+        className="m-4 max-w-64 flex-none overflow-hidden rounded-lg border border-gray-200 bg-white shadow transition ease-in-out hover:-translate-y-1 hover:scale-105 dark:border-gray-700 dark:bg-gray-800"
       >
         <img src={object.image_url[1]} className="w-full" alt="icon" />
 
@@ -36,9 +36,7 @@ const Highlight = () => {
   });
 
   return (
-    <div className="mt-4 flex flex-col">
-      <div className="text-lg font-semibold text-rose-700">Highlight</div>
-
+    <div className="flex flex-col">
       <div className="mx-2 flex flex-row flex-wrap items-center justify-center">
         {highlightList}
       </div>

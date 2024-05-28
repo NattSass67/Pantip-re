@@ -122,7 +122,7 @@ const TagHit = () => {
 
   return (
     <div className="mt-4 flex w-full flex-col bg-rose-100 p-4">
-      <div className="sticky top-80">
+      <div className="sticky top-56">
         {' '}
         {/* fixed item at distance 80 from top of the window need to know more then use your observation */}
         <div className="flex gap-x-4 text-lg font-semibold text-rose-700">

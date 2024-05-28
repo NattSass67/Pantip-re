@@ -42,12 +42,12 @@ const RoomSelect = () => {
       <a
         href={object.link_url}
         key={object.id}
-        className="mx-2 block w-24 flex-none rounded-lg border border-gray-200 bg-white p-2 shadow transition ease-in-out hover:-translate-y-1 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+        className="flex w-20 flex-none flex-col items-center justify-center border-gray-200 p-2 transition ease-in-out hover:-translate-y-1 hover:border-b-4 hover:bg-gray-100 "
       >
-        <div className="bg-blue-900">
-          <img src={object.room_icon_url} className="w-24" alt="icon" />
+        <div className="w-12 bg-blue-900">
+          <img src={object.room_icon_url} className="w-12" alt="icon" />
         </div>
-        <p className="text-center text-xs font-semibold text-rose-700 dark:text-gray-400">
+        <p className="text-center text-[10px] font-semibold text-rose-700 dark:text-gray-400">
           {object.name_en}
         </p>
       </a>
@@ -56,15 +56,14 @@ const RoomSelect = () => {
 
   return (
     <div className="relative mb-4 flex flex-col">
-      <div className="text-lg font-semibold text-rose-700">Choose room</div>
       <button
         onClick={scrollLeft}
         aria-label="Save"
-        className="absolute left-0 top-[50px] z-10 rounded-full bg-gray-200 p-2 transition hover:scale-110"
+        className="absolute left-0 top-[25px] z-10 rounded-full bg-gray-200 p-2 transition hover:scale-110"
       >
         <svg
-          width="32px"
-          height="32px"
+          width="16px"
+          height="16px"
           viewBox="0 0 1024 1024"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +86,7 @@ const RoomSelect = () => {
 
       <div
         ref={scrollContainerRef}
-        className="no-scrollbar mx-16 flex h-32 flex-row overflow-x-auto"
+        className="no-scrollbar mx-16 flex h-24 flex-row overflow-x-auto"
       >
         {roomList}
       </div>
@@ -95,11 +94,11 @@ const RoomSelect = () => {
       <button
         onClick={scrollRight}
         aria-label="Save"
-        className="absolute right-0 top-[50px] z-10 rounded-full bg-gray-200 p-2 transition hover:scale-110"
+        className="absolute right-0 top-[25px] z-10 rounded-full bg-gray-200 p-2 transition hover:scale-110"
       >
         <svg
-          width="32px"
-          height="32px"
+          width="16px"
+          height="16px"
           viewBox="0 0 1024 1024"
           className="icon"
           version="1.1"
