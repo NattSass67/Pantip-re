@@ -17,16 +17,40 @@ const FilterModal = () => {
     (state) => state.mySession.taghitContent?.data,
   );
 
+  let toFetch: string[] = [];
+
+  const onClose = () => {
+    setClicked(false);
+    // dispatch fetch
+    // dispatch set tag choosen
+    toFetch = [];
+  };
+  const deleteElement = (key: string) => {
+    const index = toFetch.indexOf(key);
+    if (index > -1) {
+      // only splice array when item is found
+      toFetch.splice(index, 1); // 2nd parameter means remove one item only
+    }
+  };
+
   const checkTagList = content?.map((object, index) => {
     return (
       <div className="flex items-center" key={index}>
         <input
           type="checkbox"
-          value=""
-          className="size-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          name={object.name}
+          onChange={(e) => {
+            if (e.target.checked) {
+              toFetch.push(e.target.name);
+            } else {
+              deleteElement(e.target.name);
+            }
+            console.log('to Fetch', toFetch);
+          }}
+          className="size-4 rounded border-gray-300 bg-gray-100"
         />
-        <p className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-           {object.name}
+        <p className="text-basefont-semibold ms-2 text-gray-900 dark:text-gray-300">
+          {object.name}
         </p>
       </div>
     );
@@ -50,11 +74,11 @@ const FilterModal = () => {
           xmlnsXlink="http://www.w3.org/1999/xlink"
           fill="#000000"
         >
-          <g id="SVGRepo_bgCarrier" stroke-width="0" />
+          <g id="SVGRepo_bgCarrier" strokeWidth="0" />
           <g
             id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <g id="SVGRepo_iconCarrier">
             {' '}
@@ -71,7 +95,7 @@ const FilterModal = () => {
                 {' '}
                 <rect
                   id="Rectangle"
-                  fill-rule="nonzero"
+                  fillRule="nonzero"
                   x="0"
                   y="0"
                   width="24"
@@ -86,8 +110,8 @@ const FilterModal = () => {
                   y2="5"
                   id="Path"
                   stroke="#0C0310"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 >
                   {' '}
                 </line>{' '}
@@ -98,8 +122,8 @@ const FilterModal = () => {
                   y2="12"
                   id="Path"
                   stroke="#0C0310"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 >
                   {' '}
                 </line>{' '}
@@ -110,8 +134,8 @@ const FilterModal = () => {
                   y2="12"
                   id="Path"
                   stroke="#0C0310"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 >
                   {' '}
                 </line>{' '}
@@ -122,16 +146,16 @@ const FilterModal = () => {
                   y2="19"
                   id="Path"
                   stroke="#0C0310"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 >
                   {' '}
                 </line>{' '}
                 <circle
                   id="Oval"
                   stroke="#0C0310"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                   cx="18"
                   cy="5"
                   r="2"
@@ -141,8 +165,8 @@ const FilterModal = () => {
                 <circle
                   id="Oval"
                   stroke="#0C0310"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                   cx="12"
                   cy="12"
                   r="2"
@@ -152,8 +176,8 @@ const FilterModal = () => {
                 <circle
                   id="Oval"
                   stroke="#0C0310"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                   cx="6"
                   cy="19"
                   r="2"
@@ -166,7 +190,7 @@ const FilterModal = () => {
         </svg>
         <div className="text-sm">Filters</div>
       </div>
-      <div onClick={() => setClicked(false)} aria-hidden="true">
+      <div onClick={() => {}} aria-hidden="true">
         <Transition
           show={clicked}
           enter="transition-opacity duration-300"
@@ -177,8 +201,44 @@ const FilterModal = () => {
           leaveTo="opacity-0"
         >
           <div className="fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="modal mb-16 h-[500px] max-h-full w-full max-w-lg overflow-hidden rounded-2xl bg-white px-4 shadow-lg">
-              {checkTagList}
+            <div className="modal mb-16 flex h-[500px] max-h-full w-full max-w-md flex-col overflow-hidden rounded-2xl bg-white p-8 px-4 shadow-lg">
+              <div className="flex flex-row justify-between text-lg font-semibold">
+                Tag filter{' '}
+                <svg
+                  width="32px"
+                  height="32px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  onClick={() => {
+                    onClose();
+                  }}
+                >
+                  <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <g id="SVGRepo_iconCarrier">
+                    {' '}
+                    <g id="Menu / Close_SM">
+                      {' '}
+                      <path
+                        id="Vector"
+                        d="M16 16L12 12M12 12L8 8M12 12L16 8M12 12L8 16"
+                        stroke="#000000"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />{' '}
+                    </g>{' '}
+                  </g>
+                </svg>
+              </div>
+              <br />
+              <hr />
+              <div className="m-8 flex flex-col">{checkTagList}</div>
             </div>
           </div>
         </Transition>

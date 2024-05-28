@@ -70,3 +70,21 @@ export const fetchContent = () => {
     }
   };
 };
+
+export const modifyTagChoosen = (tagList: string[]) => {
+  return async (dispatch: any) => {
+    dispatch(fetchStart()); // Dispatch loginStart action to set loading state
+    try {
+      if(tagList.length>0){
+        for(let i=0 ;i<tagList.length ;i++){
+          success
+        }
+      }else{
+
+      }
+    } catch (error) {
+      dispatch(fetchSuccess()); // Dispatch loginFailure action if login encounters an error
+    }
+  };
+};
+

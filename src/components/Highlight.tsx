@@ -16,7 +16,7 @@ interface Content {
 
 const Highlight = () => {
   const content: Content[] = useAppSelector(
-    (state) => state.mySession.highlightContent?.data,
+    (state) => state.mySession.highlightContent,
   );
 
   const highlightList = content?.map((object, index) => {

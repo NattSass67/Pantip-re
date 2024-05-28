@@ -11,6 +11,7 @@ interface SessionState {
   suggestTopicPopular: any;
   pickPantip: any;
   hitzPantip: any;
+  tagChoosen: any;
   loading: boolean; // Add loading state to track API request status
 }
 
@@ -25,6 +26,7 @@ const initialState: SessionState = {
   suggestTopicPopular: null,
   pickPantip: null,
   hitzPantip: null,
+  tagChoosen: [],
   loading: false, // Initialize loading state
 };
 
@@ -69,6 +71,9 @@ const sessionSlice = createSlice({
     fetchHitzPantip(state, action) {
       state.hitzPantip = action.payload;
     },
+    setTagChoosen(state, action) {
+      state.tagChoosen = action.payload;
+    },
   },
 });
 
@@ -85,6 +90,7 @@ export const {
   fetchSuggestTopicPopular,
   fetchPickPantip,
   fetchHitzPantip,
+  setTagChoosen,
 } = sessionSlice.actions;
 
 export default sessionSlice.reducer;
