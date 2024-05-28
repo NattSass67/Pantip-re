@@ -20,7 +20,7 @@ const SearchBar = () => {
           setSearchString(e.target.value);
         }}
         placeholder="Search..."
-        className="w-full rounded-full px-4 py-2 focus:outline-none shadow-xl"
+        className="w-full rounded-full px-4 py-2 shadow-xl focus:outline-none"
       />
       {/* eslint-disable-next-line react/button-has-type */}
       <button

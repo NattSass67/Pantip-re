@@ -940,9 +940,10 @@ export async function getSerch() {
 }
 
 export async function getFilterByTag(name: string) {
+  const encodedValue = encodeURIComponent(name);
   try {
     const response = await fetch(
-      `https://pantip.com/api/forum-service/tag/tag_topic_trend?tag_name=${name}&limit=10`,
+      `https://pantip.com/api/forum-service/tag/tag_topic_trend?tag_name=${encodedValue}&limit=10`,
       {
         headers: {
           accept: 'application/json, text/plain, */*',
@@ -960,7 +961,7 @@ export async function getFilterByTag(name: string) {
           'sec-fetch-site': 'same-origin',
           cookie:
             'pantip_visitc=se6lnhwSkowGEdlR7; freq.5f73e63e47e7040e00000000=1; iUUID=489d0db5b48244db491f6815482c0755; innity.dmp.cks.innity=1; _gid=GA1.2.2049066026.1716875547; ka_iid=8KrdhWpFKVQsqtJywt7BR; innity.dmp.254.sess.id=55546286.254.1716879181143; ka_sid=H85XYxcYuePvJxYxqqefQT; __gads=ID=d116fbcfafc56a35:T=1716879423:RT=1716879423:S=ALNI_MZVyrLiW4Yei1YreEtHDpUHrBbMjQ; __gpi=UID=00000e31cf03a394:T=1716879423:RT=1716879423:S=ALNI_MYKwtMuRj25viN_xwHHfygoTzkLFA; __eoi=ID=dd5d2b1da9e21d8d:T=1716879423:RT=1716879423:S=AA-AfjZSR9l1QseyOKTsWL6GYeW7; _dc_gtm_UA-10478864-2=1; innity.dmp.254.sess=5.1716879181143.1716879683065.1716879711566; _ga_ZMC2WGXL4Z=GS1.1.1716879181.2.1.1716879724.15.0.0; _ga=GA1.1.1771781601.1716875547',
-          Referer: `https://pantip.com/tag/K-POP`,
+          Referer: `https://pantip.com/tag/${encodedValue}`,
           'Referrer-Policy': 'strict-origin-when-cross-origin',
         },
         body: null,
@@ -977,3 +978,30 @@ export async function getFilterByTag(name: string) {
   }
 }
 
+fetch(
+  'https://pantip.com/api/forum-service/tag/tag_topic_trend?tag_name=%E0%B9%80%E0%B8%A3%E0%B8%95%E0%B8%95%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%A5%E0%B8%B0%E0%B8%84%E0%B8%A3&limit=10',
+  {
+    headers: {
+      accept: 'application/json, text/plain, */*',
+      'accept-language': 'en-US,en;q=0.9',
+      'cache-control': 'no-cache',
+      pragma: 'no-cache',
+      priority: 'u=1, i',
+      ptauthorize: 'Basic dGVzdGVyOnRlc3Rlcg==',
+      'sec-ch-ua':
+        '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',
+      'sec-ch-ua-mobile': '?1',
+      'sec-ch-ua-platform': '"Android"',
+      'sec-fetch-dest': 'empty',
+      'sec-fetch-mode': 'cors',
+      'sec-fetch-site': 'same-origin',
+      cookie:
+        'pantip_visitc=se6lnhwSkowGEdlR7; freq.5f73e63e47e7040e00000000=1; iUUID=489d0db5b48244db491f6815482c0755; innity.dmp.cks.innity=1; _gid=GA1.2.2049066026.1716875547; ka_iid=8KrdhWpFKVQsqtJywt7BR; innity.dmp.254.sess.id=55546286.254.1716905326136; ka_sid=6dNyuSoxx6G2NE8Ej5Atfd; __gads=ID=d116fbcfafc56a35:T=1716879423:RT=1716905648:S=ALNI_MZVyrLiW4Yei1YreEtHDpUHrBbMjQ; __gpi=UID=00000e31cf03a394:T=1716879423:RT=1716905648:S=ALNI_MYKwtMuRj25viN_xwHHfygoTzkLFA; __eoi=ID=dd5d2b1da9e21d8d:T=1716879423:RT=1716905648:S=AA-AfjZSR9l1QseyOKTsWL6GYeW7; cto_bundle=7X7LW19oWjNkaEZDVUlCOUQzZVI5VWtKUE96Mk11V21LY29BVjFHTFdJeElNYkIwdyUyRnV5NTAlMkZHa3V3aE96a0xwdkluUnYzODBoMEZVQTVxVTNBcXNmcVlsWHdqa3pNQkVsRWY2TXlzSUtwOFlqSzlDWVhBb0IxbXBUazI1ODF5dTAyJTJGUg; _cc_id=960b31c77faf20581222a26c0a4abc09; panoramaId_expiry=1716992048799; innity.dmp.254.sess=4.1716905326136.1716905645901.1716905677788; _ga=GA1.1.1771781601.1716875547; _ga_ZMC2WGXL4Z=GS1.1.1716905314.4.1.1716905696.2.0.0',
+      Referer:
+        'https://pantip.com/tag/%E0%B9%80%E0%B8%A3%E0%B8%95%E0%B8%95%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%A5%E0%B8%B0%E0%B8%84%E0%B8%A3',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+    },
+    body: null,
+    method: 'GET',
+  },
+);

@@ -6,11 +6,8 @@ import { useEffect } from 'react';
 
 import { FilterModal } from '@/components/FilterModal';
 import { Highlight } from '@/components/Highlight';
-import { PantipHitz } from '@/components/PantipHitz';
-import { PantipPick } from '@/components/PantipPick';
 import { RoomSelect } from '@/components/RoomSelect';
 import { SearchBar } from '@/components/SearchBar';
-import { TagHit } from '@/components/Taghit';
 import { fetchContent } from '@/session/my-state';
 import { useAppDispatch } from '@/session/store';
 
@@ -42,13 +39,13 @@ export default function Home() {
       <div className="h-56" />
       <Highlight />
       <div className="grid grid-cols-1 md:grid-cols-3">
-        <div className="col-span-1 md:col-span-2">
+        {/* <div className="col-span-1 md:col-span-2">
           <PantipPick />
           <PantipHitz />
         </div>
         <div className="hidden md:col-span-1 md:flex">
           <TagHit />
-        </div>
+        </div> */}
       </div>
     </div>
   );

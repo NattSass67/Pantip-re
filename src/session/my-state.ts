@@ -1,6 +1,9 @@
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-plusplus */
 import {
   getAnnounce,
   getClub,
+  getFilterByTag,
   getHighlight,
   getPantipHitz,
   getPantipPick,
@@ -55,7 +58,7 @@ export const fetchContent = () => {
       } else {
         dispatch(fetchRoomRecommend(room));
         dispatch(fetchSidebarContent(sidebar));
-        dispatch(fetchHighlightContent(highlight));
+        dispatch(fetchHighlightContent(pick.data));
         dispatch(fetchAnnounceContent(announce));
         dispatch(fetchClubContent(club));
         dispatch(fetchTaghitContent(taghit));
@@ -71,20 +74,19 @@ export const fetchContent = () => {
   };
 };
 
-export const modifyTagChoosen = (tagList: string[]) => {
+export const modifyTagChoosen = (tag: string) => {
   return async (dispatch: any) => {
     dispatch(fetchStart()); // Dispatch loginStart action to set loading state
     try {
-      if(tagList.length>0){
-        for(let i=0 ;i<tagList.length ;i++){
-          success
-        }
-      }else{
-
+      if (tag === '') {
+        dispatch(fetchSuccess());
+        return;
       }
+      const res = await getFilterByTag(tag);
+
+      dispatch(fetchHighlightContent(res.data));
     } catch (error) {
       dispatch(fetchSuccess()); // Dispatch loginFailure action if login encounters an error
     }
   };
 };
-

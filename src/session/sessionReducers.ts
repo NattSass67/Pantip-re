@@ -26,7 +26,7 @@ const initialState: SessionState = {
   suggestTopicPopular: null,
   pickPantip: null,
   hitzPantip: null,
-  tagChoosen: [],
+  tagChoosen: null,
   loading: false, // Initialize loading state
 };
 

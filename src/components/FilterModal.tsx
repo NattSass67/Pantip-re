@@ -1,8 +1,13 @@
+/* eslint-disable tailwindcss/migration-from-tailwind-2 */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 
-import { useAppSelector } from '@/session/store';
+import { modifyTagChoosen } from '@/session/my-state';
+import { useAppDispatch, useAppSelector } from '@/session/store';
 
 interface Content {
   follow_count: number;
@@ -13,24 +18,18 @@ interface Content {
 
 const FilterModal = () => {
   const [clicked, setClicked] = useState<boolean>(false);
+  const [tag, setTag] = useState<string>('');
   const content: Content[] = useAppSelector(
     (state) => state.mySession.taghitContent?.data,
   );
 
-  let toFetch: string[] = [];
+  const dispatch = useAppDispatch();
 
   const onClose = () => {
     setClicked(false);
     // dispatch fetch
-    // dispatch set tag choosen
-    toFetch = [];
-  };
-  const deleteElement = (key: string) => {
-    const index = toFetch.indexOf(key);
-    if (index > -1) {
-      // only splice array when item is found
-      toFetch.splice(index, 1); // 2nd parameter means remove one item only
-    }
+    dispatch(modifyTagChoosen(tag));
+    setTag('');
   };
 
   const checkTagList = content?.map((object, index) => {
@@ -40,16 +39,11 @@ const FilterModal = () => {
           type="checkbox"
           name={object.name}
           onChange={(e) => {
-            if (e.target.checked) {
-              toFetch.push(e.target.name);
-            } else {
-              deleteElement(e.target.name);
-            }
-            console.log('to Fetch', toFetch);
+            setTag(e.target.name);
           }}
           className="size-4 rounded border-gray-300 bg-gray-100"
         />
-        <p className="text-basefont-semibold ms-2 text-gray-900 dark:text-gray-300">
+        <p className="ms-2 text-base font-semibold text-gray-900 dark:text-gray-300">
           {object.name}
         </p>
       </div>
@@ -201,8 +195,8 @@ const FilterModal = () => {
           leaveTo="opacity-0"
         >
           <div className="fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="modal mb-16 flex h-[500px] max-h-full w-full max-w-md flex-col overflow-hidden rounded-2xl bg-white p-8 px-4 shadow-lg">
-              <div className="flex flex-row justify-between text-lg font-semibold">
+            <div className="mb-16 flex h-[500px] max-h-full w-full max-w-md flex-col overflow-hidden rounded-2xl bg-white p-8 shadow-lg">
+              <div className="flex flex-row justify-between text-xl font-semibold">
                 Tag filter{' '}
                 <svg
                   width="32px"
