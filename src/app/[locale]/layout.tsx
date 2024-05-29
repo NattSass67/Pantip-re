@@ -25,7 +25,7 @@ export default function RootLayout({
         <body className={inter.className}>
           <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-              <main className="">{children}</main>
+              {children}
             </PersistGate>
           </Provider>
         </body>
