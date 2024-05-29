@@ -4,7 +4,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Transition } from '@headlessui/react';
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 
 import { getDataTagChoosen } from '@/session/my-state';
 import { setTagChoosen } from '@/session/sessionReducers';
