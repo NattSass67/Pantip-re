@@ -90,7 +90,7 @@ const Highlight = () => {
             return (
               <div
                 key={index}
-                className="flex-none rounded-full bg-gray-400 p-1 text-[10px] text-white"
+                className="flex-none rounded-full bg-white p-1 text-[12px] text-gray-400"
               >
                 #{elem.name}
               </div>

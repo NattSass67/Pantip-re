@@ -20,8 +20,8 @@ export default function Home() {
 
   return (
     <div className="mx-8 flex flex-col">
-      <div className="fixed inset-x-0 top-0 z-10 flex flex-col bg-rose-50 p-4">
-        <div className="flex w-full flex-row items-center justify-center bg-rose-50 p-4 lg:fixed lg:inset-x-0 lg:top-0 lg:w-48">
+      <div className="fixed inset-x-0 top-0 z-10 flex flex-col bg-white p-4 shadow">
+        <div className="flex w-full flex-row items-center justify-center bg-white p-4 lg:fixed lg:inset-x-0 lg:top-0 lg:w-48">
           <img
             src="https://ptcdn.info/pantip/pantip-colorblack-logo.png"
             className="w-48"

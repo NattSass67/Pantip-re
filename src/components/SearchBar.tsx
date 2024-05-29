@@ -25,7 +25,7 @@ const SearchBar = () => {
       {/* eslint-disable-next-line react/button-has-type */}
       <button
         onClick={submit}
-        className="ml-2 rounded-full bg-rose-600 px-4 py-2 text-white transition hover:scale-110"
+        className="ml-2 rounded-full bg-stone-900 px-4 py-2 text-white transition hover:scale-110"
       >
         <svg
           fill="#ffffff"

@@ -44,10 +44,10 @@ const RoomSelect = () => {
         key={object.id}
         className="flex w-20 flex-none flex-col items-center justify-center border-gray-200 p-2 transition ease-in-out hover:-translate-y-1 hover:border-b-4 hover:bg-gray-100 "
       >
-        <div className="w-12 bg-blue-900">
+        <div className="w-12 bg-stone-900 rounded-md">
           <img src={object.room_icon_url} className="w-12" alt="icon" />
         </div>
-        <p className="text-center text-[10px] font-semibold text-rose-700 dark:text-gray-400">
+        <p className="text-center text-[10px] font-semibold text-stone-900 dark:text-gray-400">
           {object.name_en}
         </p>
       </a>
@@ -56,7 +56,7 @@ const RoomSelect = () => {
 
   return (
     <div className="relative mb-4 flex flex-col">
-      <div className="absolute left-6 top-0 z-10 h-24 w-16 bg-gradient-to-r from-rose-50">
+      <div className="absolute left-6 top-0 z-10 h-24 w-16 bg-gradient-to-r from-white">
         {' '}
       </div>
       <button
@@ -94,7 +94,7 @@ const RoomSelect = () => {
         {roomList}
       </div>
 
-      <div className="absolute right-6 top-0 z-10 h-24 w-16 bg-gradient-to-l from-rose-50">
+      <div className="absolute right-6 top-0 z-10 h-24 w-16 bg-gradient-to-l from-white">
         {' '}
       </div>
       <button
