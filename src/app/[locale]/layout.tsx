@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <>
       <head>
-        <title>JackGT Pro</title>
+        <title>Pantip re</title>
         <meta name="description" content="Your website description" />
       </head>
       <html lang="en">

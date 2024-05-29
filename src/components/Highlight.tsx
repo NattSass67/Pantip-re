@@ -43,16 +43,16 @@ const Highlight = () => {
       <div className="flex flex-row items-center justify-center gap-x-4">
         {' '}
         <span className="relative flex size-8">
-          <span className="absolute inline-flex size-full animate-ping rounded-full bg-sky-400 opacity-75" />
-          <span className="relative inline-flex size-8 rounded-full bg-sky-500" />
+          <span className="absolute inline-flex size-full animate-ping rounded-full bg-stone-900 opacity-75" />
+          <span className="relative inline-flex size-8 rounded-full bg-stone-900" />
         </span>
         <span className="relative flex size-8">
-          <span className="absolute inline-flex size-full animate-ping rounded-full bg-sky-400 opacity-75" />
-          <span className="relative inline-flex size-8 rounded-full bg-sky-500" />
+          <span className="absolute inline-flex size-full animate-ping rounded-full bg-stone-900 opacity-75" />
+          <span className="relative inline-flex size-8 rounded-full bg-stone-900" />
         </span>
         <span className="relative flex size-8">
-          <span className="absolute inline-flex size-full animate-ping rounded-full bg-sky-400 opacity-75" />
-          <span className="relative inline-flex size-8 rounded-full bg-sky-500" />
+          <span className="absolute inline-flex size-full animate-ping rounded-full bg-stone-900 opacity-75" />
+          <span className="relative inline-flex size-8 rounded-full bg-stone-900" />
         </span>
       </div>
       <div className="flex flex-row items-center justify-center text-lg font-semibold">
@@ -90,7 +90,7 @@ const Highlight = () => {
             return (
               <div
                 key={index}
-                className="flex-none rounded-full bg-white p-1 text-[12px] text-gray-400"
+                className="flex-none rounded-full bg-white p-1 text-[12px] text-gray-500"
               >
                 #{elem.name}
               </div>
