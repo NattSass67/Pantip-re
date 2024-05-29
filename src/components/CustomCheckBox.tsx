@@ -11,8 +11,8 @@ const CustomCheckBox = (params: { text: string; setTag: Function }) => {
 
   const buttonClicked: React.ReactNode = (
     <svg
-      width="32px"
-      height="32px"
+      width="28px"
+      height="28px"
       viewBox="0 0 512 512"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -55,8 +55,8 @@ const CustomCheckBox = (params: { text: string; setTag: Function }) => {
   );
   const buttonNoClick: React.ReactNode = (
     <svg
-      width="32px"
-      height="32px"
+      width="28px"
+      height="28px"
       viewBox="0 0 512 512"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@ const CustomCheckBox = (params: { text: string; setTag: Function }) => {
     </svg>
   );
   return (
-    <div className="flex flex-row justify-between">
+    <div className="flex flex-row gap-x-8">
       <div
         onClick={tagClick}
         aria-hidden="true"
@@ -106,7 +106,7 @@ const CustomCheckBox = (params: { text: string; setTag: Function }) => {
       >
         {params.text === selector ? buttonClicked : buttonNoClick}
       </div>
-      <div>{params.text}</div>
+      <div className="align-baseline">{params.text}</div>
     </div>
   );
 };

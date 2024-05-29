@@ -20,8 +20,8 @@ export default function Home() {
 
   return (
     <div className="mx-8 flex flex-col">
-      <div className="fixed inset-x-0 top-0 z-10 bg-rose-50 px-4">
-        <div className="flex items-center justify-center p-4">
+      <div className="fixed inset-x-0 top-0 z-10 flex flex-col bg-rose-50 p-4">
+        <div className="flex w-full flex-row items-center justify-center bg-rose-50 p-4 lg:fixed lg:inset-x-0 lg:top-0 lg:w-48">
           <img
             src="https://ptcdn.info/pantip/pantip-colorblack-logo.png"
             className="w-48"
@@ -36,7 +36,7 @@ export default function Home() {
       </div>
 
       {/* Spacer to push content below fixed header */}
-      <div className="h-56" />
+      <div className="h-64 lg:h-48" />
       <Highlight />
       <div className="grid grid-cols-1 md:grid-cols-3">
         {/* <div className="col-span-1 md:col-span-2">
@@ -47,6 +47,7 @@ export default function Home() {
           <TagHit />
         </div> */}
       </div>
+      <div> </div>
     </div>
   );
 }

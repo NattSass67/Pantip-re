@@ -182,7 +182,7 @@ const FilterModal = () => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="fixed inset-0 z-30 flex items-center justify-center bg-black bg-opacity-50">
             <div className="no-scrollbar mb-16 flex h-[500px] max-h-full w-full max-w-md flex-col overflow-hidden overflow-y-auto rounded-2xl bg-white p-8 shadow-lg">
               <div className="flex flex-row justify-between text-xl font-semibold">
                 Tag filter{' '}

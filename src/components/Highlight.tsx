@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/no-array-index-key */
@@ -21,8 +22,18 @@ interface Content {
   image_url: string[];
   thumbnail_url: string;
   views_count: number;
+  tags: { name: string }[];
+  created_time: string;
 }
 
+const formatDate = (isoString: string) => {
+  const date = new Date(isoString);
+  const day = date.getDate();
+  const month = date.toLocaleString('default', { month: 'long' }); // Full month name
+  const year = date.getFullYear();
+
+  return `${day} ${month} ${year}`;
+};
 const Highlight = () => {
   const content: Content[] = useAppSelector(
     (state) => state.mySession.highlightContent,
@@ -56,26 +67,42 @@ const Highlight = () => {
       <a
         href={`https://pantip.com/topic/${object.topic_id}`}
         key={index}
-        className="m-4 size-72 flex-none overflow-hidden rounded-lg bg-white shadow transition ease-in-out hover:-translate-y-1 hover:scale-105"
+        className="m-4 w-80 flex-none overflow-hidden rounded-lg bg-white shadow transition ease-in-out hover:-translate-y-1 hover:scale-105"
       >
-        <div className="flex h-56 w-full flex-col items-center justify-center overflow-hidden border border-gray-200 shadow">
+        <div className="flex h-56 w-full flex-col items-center justify-center overflow-hidden border border-gray-200 bg-zinc-800 shadow">
           <img
             src={
               object.image_url
                 ? (object.image_url[1] as string)
                 : object.thumbnail_url
                   ? object.thumbnail_url
-                  : 'picture-icon-vector-illustration.jpg'
+                  : 'empty.jpg'
             }
             className="w-full"
             alt="icon"
           />
         </div>
-
         <p className="truncate p-2 text-base font-semibold">
           {object.name ? object.name : object.title}
         </p>
-        <div className="float-right mx-4 flex flex-row-reverse text-xs">
+        <div className="mb-1 flex h-6 flex-row flex-wrap gap-1 overflow-hidden px-4">
+          {' '}
+          {object.tags.map((elem, index) => {
+            return (
+              <div
+                key={index}
+                className="flex-none rounded-full bg-gray-400 p-1 text-[10px] text-white"
+              >
+                #{elem.name}
+              </div>
+            );
+          })}
+        </div>
+        <div className="mb-1 flex flex-row flex-wrap gap-1 px-4 text-[10px]">
+          {' '}
+          {formatDate(object.created_time)}
+        </div>
+        <div className="float-right mx-4 mb-2 flex flex-row-reverse text-xs">
           <div>{object.comments_count}</div>
           <div className="ml-2">
             <svg

@@ -12,7 +12,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="z-50 flex w-full max-w-lg items-center justify-center rounded-full">
+    <div className="z-20 flex w-full max-w-lg items-center justify-center rounded-full">
       <input
         type="text"
         value={searchString}
