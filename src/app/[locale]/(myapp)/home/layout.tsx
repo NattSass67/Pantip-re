@@ -2,12 +2,23 @@
 
 import '@/styles/global.css';
 
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+
+import { persistor, store } from '@/session/store';
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <main className="">{children}</main>;
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <main className="">{children}</main>
+      </PersistGate>
+    </Provider>
+  );
 }
 
 // Enable edge runtime but you are required to disable the `migrate` function in `src/libs/DB.ts`
