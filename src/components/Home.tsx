@@ -1,5 +1,3 @@
-/* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable unused-imports/no-unused-imports */
 /* eslint-disable @next/next/no-img-element */
 
 'use client';
@@ -10,10 +8,13 @@ import { FilterModal } from '@/components/FilterModal';
 import { Highlight } from '@/components/Highlight';
 import { RoomSelect } from '@/components/RoomSelect';
 import { SearchBar } from '@/components/SearchBar';
+import { fetchContent } from '@/session/my-state';
+import { useAppDispatch } from '@/session/store';
 
 export default function Home() {
+  const dispatch = useAppDispatch();
   useEffect(() => {
-    // dispatch(fetchContent());
+    dispatch(fetchContent());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
