@@ -9,7 +9,6 @@
 
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { Transition } from '@headlessui/react';
-import { Fragment } from 'react';
 
 import { useAppSelector } from '@/session/store';
 
