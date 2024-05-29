@@ -18,7 +18,7 @@ interface SessionState {
 const initialState: SessionState = {
   roomRecommend: null,
   sidebarContent: null,
-  highlightContent: null,
+  highlightContent: [],
   announceContent: null,
   clubContent: null,
   taghitContent: null,
