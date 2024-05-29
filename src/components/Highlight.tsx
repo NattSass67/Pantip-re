@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable @next/next/no-img-element */
@@ -6,11 +7,14 @@
 'use client';
 
 /* eslint-disable jsx-a11y/label-has-associated-control */
+import { Transition } from '@headlessui/react';
+import { Fragment } from 'react';
 
 import { useAppSelector } from '@/session/store';
 
 interface Content {
   comments_count: number;
+  topic_id: number;
   title: string;
   name: string;
   post_url: string;
@@ -23,13 +27,36 @@ const Highlight = () => {
   const content: Content[] = useAppSelector(
     (state) => state.mySession.highlightContent,
   );
+  const isLoading = useAppSelector((state) => state.mySession.loading);
+  const loader: React.ReactNode = (
+    <div className="fixed inset-x-1/2 top-1/2 flex flex-col">
+      <div className="flex flex-row items-center justify-center gap-x-4">
+        {' '}
+        <span className="relative flex size-8">
+          <span className="absolute inline-flex size-full animate-ping rounded-full bg-sky-400 opacity-75" />
+          <span className="relative inline-flex size-8 rounded-full bg-sky-500" />
+        </span>
+        <span className="relative flex size-8">
+          <span className="absolute inline-flex size-full animate-ping rounded-full bg-sky-400 opacity-75" />
+          <span className="relative inline-flex size-8 rounded-full bg-sky-500" />
+        </span>
+        <span className="relative flex size-8">
+          <span className="absolute inline-flex size-full animate-ping rounded-full bg-sky-400 opacity-75" />
+          <span className="relative inline-flex size-8 rounded-full bg-sky-500" />
+        </span>
+      </div>
+      <div className="flex flex-row items-center justify-center text-lg font-semibold">
+        Loading...
+      </div>
+    </div>
+  );
 
   const highlightList = content?.map((object, index) => {
     return (
       <a
-        href={object.post_url}
+        href={`https://pantip.com/topic/${object.topic_id}`}
         key={index}
-        className="m-4 size-72 flex-none overflow-hidden rounded-lg bg-white transition ease-in-out hover:-translate-y-1 hover:scale-105"
+        className="m-4 size-72 flex-none overflow-hidden rounded-lg bg-white shadow transition ease-in-out hover:-translate-y-1 hover:scale-105"
       >
         <div className="flex h-56 w-full flex-col items-center justify-center overflow-hidden border border-gray-200 shadow">
           <img
@@ -45,10 +72,10 @@ const Highlight = () => {
           />
         </div>
 
-        <p className="truncate p-2 text-center text-sm">
+        <p className="truncate p-2 text-base font-semibold">
           {object.name ? object.name : object.title}
         </p>
-        <div className="float-right m-2 flex flex-row-reverse text-xs">
+        <div className="float-right mx-4 flex flex-row-reverse text-xs">
           <div>{object.comments_count}</div>
           <div className="ml-2">
             <svg
@@ -112,9 +139,20 @@ const Highlight = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-row flex-wrap items-center justify-center">
-        {highlightList}
-      </div>
+      {isLoading ? loader : <></>}
+      <Transition
+        show={!isLoading}
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-150"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <div className="flex flex-row flex-wrap items-center justify-center">
+          {highlightList}
+        </div>
+      </Transition>
     </div>
   );
 };

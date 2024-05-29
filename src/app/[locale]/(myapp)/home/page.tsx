@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <div className="mx-8 flex flex-col">
-      <div className="fixed inset-x-0 top-0 z-10 bg-rose-50 px-8">
+      <div className="fixed inset-x-0 top-0 z-10 bg-rose-50 px-4">
         <div className="flex items-center justify-center p-4">
           <img
             src="https://ptcdn.info/pantip/pantip-colorblack-logo.png"

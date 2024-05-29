@@ -27,6 +27,7 @@ import {
   fetchSuggestTopicBehavior,
   fetchSuggestTopicPopular,
   fetchTaghitContent,
+  setTagChoosen,
 } from './sessionReducers';
 
 export const fetchContent = () => {
@@ -66,7 +67,11 @@ export const fetchContent = () => {
         dispatch(fetchSuggestTopicPopular(suggestPopular));
         dispatch(fetchPickPantip(pick));
         dispatch(fetchHitzPantip(hitz));
-        dispatch(fetchSuccess());
+        setTimeout(async () => {
+          dispatch(fetchSuccess());
+          // Set success after 2000 milliseconds
+        }, 2000);
+        dispatch(setTagChoosen(''));
       }
     } catch (error) {
       dispatch(fetchSuccess()); // Dispatch loginFailure action if login encounters an error
@@ -74,7 +79,7 @@ export const fetchContent = () => {
   };
 };
 
-export const modifyTagChoosen = (tag: string) => {
+export const getDataTagChoosen = (tag: string) => {
   return async (dispatch: any) => {
     dispatch(fetchStart()); // Dispatch loginStart action to set loading state
     try {
@@ -85,6 +90,10 @@ export const modifyTagChoosen = (tag: string) => {
       const res = await getFilterByTag(tag);
 
       dispatch(fetchHighlightContent(res.data));
+      setTimeout(async () => {
+        dispatch(fetchSuccess());
+        // Set success after 2000 milliseconds
+      }, 2000);
     } catch (error) {
       dispatch(fetchSuccess()); // Dispatch loginFailure action if login encounters an error
     }

@@ -27,13 +27,13 @@ const RoomSelect = () => {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -200, behavior: 'smooth' });
+      scrollContainerRef.current.scrollBy({ left: -80, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 200, behavior: 'smooth' });
+      scrollContainerRef.current.scrollBy({ left: 80, behavior: 'smooth' });
     }
   };
 
@@ -56,6 +56,9 @@ const RoomSelect = () => {
 
   return (
     <div className="relative mb-4 flex flex-col">
+      <div className="absolute left-6 top-0 z-10 h-24 w-16 bg-gradient-to-r from-rose-50">
+        {' '}
+      </div>
       <button
         onClick={scrollLeft}
         aria-label="Save"
@@ -86,11 +89,14 @@ const RoomSelect = () => {
 
       <div
         ref={scrollContainerRef}
-        className="no-scrollbar mx-16 flex h-24 flex-row overflow-x-auto"
+        className="no-scrollbar mx-8 flex h-24 flex-row overflow-x-auto "
       >
         {roomList}
       </div>
 
+      <div className="absolute right-6 top-0 z-10 h-24 w-16 bg-gradient-to-l from-rose-50">
+        {' '}
+      </div>
       <button
         onClick={scrollRight}
         aria-label="Save"

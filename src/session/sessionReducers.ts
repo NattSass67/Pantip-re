@@ -11,7 +11,7 @@ interface SessionState {
   suggestTopicPopular: any;
   pickPantip: any;
   hitzPantip: any;
-  tagChoosen: any;
+  tagChoosen: string;
   loading: boolean; // Add loading state to track API request status
 }
 
@@ -26,7 +26,7 @@ const initialState: SessionState = {
   suggestTopicPopular: null,
   pickPantip: null,
   hitzPantip: null,
-  tagChoosen: null,
+  tagChoosen: '',
   loading: false, // Initialize loading state
 };
 

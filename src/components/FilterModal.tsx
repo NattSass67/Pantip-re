@@ -6,8 +6,11 @@
 import { Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 
-import { modifyTagChoosen } from '@/session/my-state';
+import { getDataTagChoosen } from '@/session/my-state';
+import { setTagChoosen } from '@/session/sessionReducers';
 import { useAppDispatch, useAppSelector } from '@/session/store';
+
+import { CustomCheckBox } from './CustomCheckBox';
 
 interface Content {
   follow_count: number;
@@ -28,26 +31,11 @@ const FilterModal = () => {
   const onClose = () => {
     setClicked(false);
     // dispatch fetch
-    dispatch(modifyTagChoosen(tag));
-    setTag('');
+    dispatch(getDataTagChoosen(tag));
   };
 
   const checkTagList = content?.map((object, index) => {
-    return (
-      <div className="flex items-center" key={index}>
-        <input
-          type="checkbox"
-          name={object.name}
-          onChange={(e) => {
-            setTag(e.target.name);
-          }}
-          className="size-4 rounded border-gray-300 bg-gray-100"
-        />
-        <p className="ms-2 text-base font-semibold text-gray-900 dark:text-gray-300">
-          {object.name}
-        </p>
-      </div>
-    );
+    return <CustomCheckBox key={index} setTag={setTag} text={object.name} />;
   });
 
   return (
@@ -195,7 +183,7 @@ const FilterModal = () => {
           leaveTo="opacity-0"
         >
           <div className="fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="mb-16 flex h-[500px] max-h-full w-full max-w-md flex-col overflow-hidden rounded-2xl bg-white p-8 shadow-lg">
+            <div className="no-scrollbar mb-16 flex h-[500px] max-h-full w-full max-w-md flex-col overflow-hidden overflow-y-auto rounded-2xl bg-white p-8 shadow-lg">
               <div className="flex flex-row justify-between text-xl font-semibold">
                 Tag filter{' '}
                 <svg
@@ -233,6 +221,18 @@ const FilterModal = () => {
               <br />
               <hr />
               <div className="m-8 flex flex-col">{checkTagList}</div>
+              <div>
+                <hr />
+                <div
+                  className="m-2 flex w-24 flex-col items-center justify-center rounded-md font-semibold hover:bg-gray-200"
+                  onClick={() => {
+                    dispatch(setTagChoosen(''));
+                  }}
+                  aria-hidden="true"
+                >
+                  Clear filter
+                </div>
+              </div>
             </div>
           </div>
         </Transition>
