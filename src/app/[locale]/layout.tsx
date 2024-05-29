@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function LocaleLayout(props: {
+export default function RootLayout(props: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
