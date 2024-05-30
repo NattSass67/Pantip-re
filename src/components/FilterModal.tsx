@@ -3,7 +3,7 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Transition } from '@headlessui/react';
+import { Transition, TransitionChild } from '@headlessui/react';
 import { useState } from 'react';
 
 import { getDataTagChoosen } from '@/session/my-state';
@@ -183,57 +183,66 @@ const FilterModal = () => {
           leaveTo="opacity-0"
         >
           <div className="fixed inset-0 z-30 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="no-scrollbar mb-16 flex h-[500px] max-h-full w-full max-w-md flex-col overflow-hidden overflow-y-auto rounded-2xl bg-white p-8 shadow-lg">
-              <div className="flex flex-row justify-between text-xl font-semibold">
-                <div className="mx-2">Tag filter</div>
-                <svg
-                  width="32px"
-                  height="32px"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  onClick={() => {
-                    onClose();
-                  }}
-                >
-                  <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <g id="SVGRepo_iconCarrier">
-                    {' '}
-                    <g id="Menu / Close_SM">
+            <TransitionChild
+              enter="transition ease-in-out duration-300"
+              enterFrom="translate-y-full"
+              enterTo="translate-y-0"
+              leave="transition ease-in-out duration-300"
+              leaveFrom="translate-y-0"
+              leaveTo="translate-y-full"
+            >
+              <div className="no-scrollbar mb-16 flex h-[500px] max-h-full w-full max-w-md flex-col overflow-hidden overflow-y-auto rounded-2xl bg-white p-8 shadow-lg">
+                <div className="flex flex-row justify-between text-xl font-semibold">
+                  <div className="mx-2">Tag filter</div>
+                  <svg
+                    width="32px"
+                    height="32px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    onClick={() => {
+                      onClose();
+                    }}
+                  >
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <g id="SVGRepo_iconCarrier">
                       {' '}
-                      <path
-                        id="Vector"
-                        d="M16 16L12 12M12 12L8 8M12 12L16 8M12 12L8 16"
-                        stroke="#000000"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />{' '}
-                    </g>{' '}
-                  </g>
-                </svg>
-              </div>
-              <br />
-              <hr />
-              <div className="mx-2 my-8 flex flex-col">{checkTagList}</div>
-              <div>
+                      <g id="Menu / Close_SM">
+                        {' '}
+                        <path
+                          id="Vector"
+                          d="M16 16L12 12M12 12L8 8M12 12L16 8M12 12L8 16"
+                          stroke="#000000"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />{' '}
+                      </g>{' '}
+                    </g>
+                  </svg>
+                </div>
+                <br />
                 <hr />
-                <div
-                  className="my-2 flex w-24 flex-col items-center justify-center rounded-md font-semibold hover:bg-gray-200"
-                  onClick={() => {
-                    dispatch(setTagChoosen(''));
-                  }}
-                  aria-hidden="true"
-                >
-                  Clear filter
+                <div className="mx-2 my-8 flex flex-col">{checkTagList}</div>
+                <div>
+                  <hr />
+                  <div
+                    className="my-2 flex w-24 flex-col items-center justify-center rounded-md font-semibold hover:bg-gray-200"
+                    onClick={() => {
+                      dispatch(setTagChoosen(''));
+                    }}
+                    aria-hidden="true"
+                  >
+                    Clear filter
+                  </div>
                 </div>
               </div>
-            </div>
+            </TransitionChild>
           </div>
         </Transition>
       </div>
