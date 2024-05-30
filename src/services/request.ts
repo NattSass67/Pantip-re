@@ -40,8 +40,7 @@ export async function getRoomRecommend() {
           description:
             'คอมมือใหม่ อินเทอร์เน็ต ซอฟต์แวร์ ฮาร์ดแวร์ เกม เขียนโปรแกรม Gadget',
           link_url: 'https://pantip.com/forum/siliconvalley',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-siliconvalley.svg',
+          room_icon_url: 'icon/1.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -54,8 +53,7 @@ export async function getRoomRecommend() {
           description:
             'ร้านอาหาร สูตรอาหาร อาหารคาว อาหารหวาน เบเกอรี่ ไอศกรีม',
           link_url: 'https://pantip.com/forum/food',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-food.svg',
+          room_icon_url: 'icon/2.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -68,8 +66,7 @@ export async function getRoomRecommend() {
           description:
             'อนุรักษ์สิ่งแวดล้อม อนุรักษ์พลังงาน Green Living การออกแบบเพื่อสิ่งแวดล้อม ผลิตภัณฑ์รักษ์โลก เกษตรอินทรีย์',
           link_url: 'https://pantip.com/forum/greenzone',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-greenzone.svg',
+          room_icon_url: 'icon/3.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -82,8 +79,7 @@ export async function getRoomRecommend() {
           description:
             'K-POP ซีรีส์เกาหลี นักแสดงเกาหลี อาหารเกาหลี เที่ยวเกาหลี แฟชั่นเกาหลี ภาษาเกาหลี',
           link_url: 'https://pantip.com/forum/korea',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-korea.svg',
+          room_icon_url: 'icon/4.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -95,8 +91,7 @@ export async function getRoomRecommend() {
           slug: 'camera',
           description: 'กล้องถ่ายรูป กล้อง DSLR กล้องวิดีโอ เทคนิคการถ่ายรูป',
           link_url: 'https://pantip.com/forum/camera',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-camera.svg',
+          room_icon_url: 'icon/5.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -109,8 +104,7 @@ export async function getRoomRecommend() {
           description:
             'การ์ตูนญี่ปุ่น การ์ตูนไทย การ์ตูนฝรั่ง อนิเมะ วาดการ์ตูน ของสะสมจากการ์ตูน คอสเพลย์',
           link_url: 'https://pantip.com/forum/cartoon',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-cartoon.svg',
+          room_icon_url: 'icon/6.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -123,8 +117,7 @@ export async function getRoomRecommend() {
           description:
             'Gadget, Action Camera, Drone, Game Console, Smartwatch, Smartband',
           link_url: 'https://pantip.com/forum/gadget',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-gadget.svg',
+          room_icon_url: 'icon/7.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -136,8 +129,7 @@ export async function getRoomRecommend() {
           slug: 'gallery',
           description: 'ภาพถ่ายบุคคล ภาพถ่ายทิวทัศน์ ภาพถ่ายมาโคร',
           link_url: 'https://pantip.com/forum/gallery',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-gallery.svg',
+          room_icon_url: 'icon/8.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -149,8 +141,7 @@ export async function getRoomRecommend() {
           slug: 'klaibann',
           description: 'เรียนต่อต่างประเทศ ทำงานต่างประเทศ วีซ่า',
           link_url: 'https://pantip.com/forum/klaibann',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-klaibann.svg',
+          room_icon_url: 'icon/9.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -163,8 +154,7 @@ export async function getRoomRecommend() {
           description:
             'สัตว์เลี้ยง สุนัข แมว ต้นไม้ จัดสวน ของสะสม งานฝีมือ เกษตรกรรม',
           link_url: 'https://pantip.com/forum/jatujak',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-jatujak.svg',
+          room_icon_url: 'icon/10.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -177,8 +167,7 @@ export async function getRoomRecommend() {
           description:
             'นักร้องนักดนตรี เพลง เครื่องดนตรี คอนเสิร์ต มิวสิควิดีโอ',
           link_url: 'https://pantip.com/forum/chalermkrung',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-chalermkrung.svg',
+          room_icon_url: 'icon/11.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -190,8 +179,7 @@ export async function getRoomRecommend() {
           slug: 'chalermthai',
           description: 'ภาพยนตร์ ดาราภาพยนตร์ ค่ายหนัง เทศกาลหนัง หนังสั้น',
           link_url: 'https://pantip.com/forum/chalermthai',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-chalermthai.svg',
+          room_icon_url: 'icon/12.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -203,8 +191,7 @@ export async function getRoomRecommend() {
           slug: 'family',
           description: 'ครอบครัว ตั้งครรภ์ ตั้งชื่อลูก การเลี้ยงลูก การสอนลูก',
           link_url: 'https://pantip.com/forum/family',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-family.svg',
+          room_icon_url: 'icon/13.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -217,8 +204,7 @@ export async function getRoomRecommend() {
           description:
             'บ้าน คอนโดมิเนียม ตกแต่งบ้าน เฟอร์นิเจอร์ เครื่องใช้ไฟฟ้า เครื่องครัว',
           link_url: 'https://pantip.com/forum/home',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-home.svg',
+          room_icon_url: 'icon/14.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -231,8 +217,7 @@ export async function getRoomRecommend() {
           description:
             'ผู้สูงอายุ สุขภาพผู้สูงอายุ ชีวิตหลังเกษียณ สิทธิผู้สูงอายุ ท่องเที่ยวผู้สูงอายุ',
           link_url: 'https://pantip.com/forum/theoldsiam',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-theoldsiam.svg',
+          room_icon_url: 'icon/15.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -244,8 +229,7 @@ export async function getRoomRecommend() {
           slug: 'beauty',
           description: 'เครื่องสำอาง เสริมสวย แฟชั่น เครื่องประดับ ลดความอ้วน',
           link_url: 'https://pantip.com/forum/beauty',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-beauty.svg',
+          room_icon_url: 'icon/16.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -257,8 +241,7 @@ export async function getRoomRecommend() {
           slug: 'writer',
           description: 'แต่งนิยาย เรื่องสั้น กลอน นิทาน',
           link_url: 'https://pantip.com/forum/writer',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-writer.svg',
+          room_icon_url: 'icon/17.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -271,8 +254,7 @@ export async function getRoomRecommend() {
           description:
             'เที่ยวไทย เที่ยวต่างประเทศ ทะเล ภูเขา เกาะ น้ำตก ดำน้ำ สายการบิน',
           link_url: 'https://pantip.com/forum/blueplanet',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-blueplanet.svg',
+          room_icon_url: 'icon/18.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -284,8 +266,7 @@ export async function getRoomRecommend() {
           slug: 'tvshow',
           description: 'ละคร นักแสดง ซีรี่ส์ รายการโทรทัศน์ สถานีโทรทัศน์',
           link_url: 'https://pantip.com/forum/tvshow',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-tvshow.svg',
+          room_icon_url: 'icon/19.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -297,8 +278,7 @@ export async function getRoomRecommend() {
           slug: 'bangrak',
           description: 'ความรัก แต่งงาน พรีเวดดิ้ง ปัญหาชีวิตคู่',
           link_url: 'https://pantip.com/forum/bangrak',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-bangrak.svg',
+          room_icon_url: 'icon/20.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -310,8 +290,7 @@ export async function getRoomRecommend() {
           slug: 'horoscope',
           description: 'ดูดวง ฮวงจุ้ย ไพ่ยิปซี ทำนายฝัน พระเครื่อง',
           link_url: 'https://pantip.com/forum/horoscope',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-horoscope.svg',
+          room_icon_url: 'icon/21.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -323,8 +302,7 @@ export async function getRoomRecommend() {
           slug: 'pantip',
           description: 'ข้อเสนอแนะถึงพันทิป วิธีการใช้งานพันทิป กิจกรรมพันทิป',
           link_url: 'https://pantip.com/forum/pantip',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-pantip.svg',
+          room_icon_url: 'icon/22.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -337,8 +315,7 @@ export async function getRoomRecommend() {
           description:
             'ภาคเหนือ ภาคอีสาน ภาคกลาง ภาคตะวันออก ภาคตะวันตก ภาคใต้',
           link_url: 'https://pantip.com/forum/region',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-region.svg',
+          room_icon_url: 'icon/23.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -350,7 +327,7 @@ export async function getRoomRecommend() {
           slug: 'mbk',
           description: 'โทรศัพท์มือถือ Smartphone Tablet iOS Android',
           link_url: 'https://pantip.com/forum/mbk',
-          room_icon_url: 'https://ptcdn.info/mobile/icon_room/pt-forum-mbk.svg',
+          room_icon_url: 'icon/24.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -362,7 +339,7 @@ export async function getRoomRecommend() {
           slug: '',
           description: 'รวมกระทู้จากทุกห้อง',
           link_url: 'https://pantip.com/forum',
-          room_icon_url: 'https://ptcdn.info/mobile/icon_room/pt-forum-all.svg',
+          room_icon_url: 'icon/25.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -374,8 +351,7 @@ export async function getRoomRecommend() {
           slug: 'ratchada',
           description: 'รถยนต์ มอเตอร์ไซค์ เครื่องเสียงรถยนต์ แต่งรถ การจราจร',
           link_url: 'https://pantip.com/forum/ratchada',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-ratchada.svg',
+          room_icon_url: 'icon/26.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -388,8 +364,7 @@ export async function getRoomRecommend() {
           description:
             'การเมือง รัฐศาสตร์ กฎหมาย สภาผู้แทน รัฐบาล ฝ่ายค้าน พรรคการเมือง',
           link_url: 'https://pantip.com/forum/rajdumnern',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-rajdumnern.svg',
+          room_icon_url: 'icon/27.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -401,8 +376,7 @@ export async function getRoomRecommend() {
           slug: 'isolate',
           description: 'กระทู้อื่นๆ ที่ไม่สังกัดห้องไหนเลย',
           link_url: 'https://pantip.com/forum/isolate',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-isolate.svg',
+          room_icon_url: 'icon/28.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -415,8 +389,7 @@ export async function getRoomRecommend() {
           description:
             'กฎหมาย ปัญหาสังคม ปัญหาชีวิต เศรษฐกิจ คุ้มครองผู้บริโภค',
           link_url: 'https://pantip.com/forum/social',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-social.svg',
+          room_icon_url: 'icon/29.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -428,8 +401,7 @@ export async function getRoomRecommend() {
           slug: 'religious',
           description: 'ศาสนาพุทธ ศาสนาคริสต์ ศาสนาอิสลาม เที่ยววัด ทำบุญ',
           link_url: 'https://pantip.com/forum/religious',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-religious.svg',
+          room_icon_url: 'icon/30.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -441,8 +413,7 @@ export async function getRoomRecommend() {
           slug: 'supachalasai',
           description: 'กีฬา ฟุตบอล บาสเกตบอล มวยสากล กอล์ฟ จักรยาน นักกีฬา',
           link_url: 'https://pantip.com/forum/supachalasai',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-supachalasai.svg',
+          room_icon_url: 'icon/31.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -455,8 +426,7 @@ export async function getRoomRecommend() {
           description:
             'ชีวิตวัยรุ่น การเรียน โรงเรียน มหาวิทยาลัย ความรักวัยรุ่น เกม',
           link_url: 'https://pantip.com/forum/siam',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-siam.svg',
+          room_icon_url: 'icon/32.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -469,8 +439,7 @@ export async function getRoomRecommend() {
           description:
             'สุขภาพกาย สุขภาพจิต โรคมะเร็ง โรคไมเกรน โรคภูมิแพ้ ปวดประจำเดือน',
           link_url: 'https://pantip.com/forum/lumpini',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-lumpini.svg',
+          room_icon_url: 'icon/33.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -483,8 +452,7 @@ export async function getRoomRecommend() {
           description:
             'หุ้น เศรษฐกิจ การลงทุน LTF RMF ธนาคาร เงินตราต่างประเทศ',
           link_url: 'https://pantip.com/forum/sinthorn',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-sinthorn.svg',
+          room_icon_url: 'icon/34.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -497,8 +465,7 @@ export async function getRoomRecommend() {
           description:
             'การบริหารจัดการ การตลาด ทรัพยากรบุคคล งานขาย SME ภาษีนิติบุคคล',
           link_url: 'https://pantip.com/forum/silom',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-silom.svg',
+          room_icon_url: 'icon/35.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -511,8 +478,7 @@ export async function getRoomRecommend() {
           description:
             'วิทยาศาสตร์ วิศวกรรม เทคโนโลยี ฟิสิกส์ ดาราศาสตร์ อวกาศ',
           link_url: 'https://pantip.com/forum/wahkor',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-wahkor.svg',
+          room_icon_url: 'icon/36.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -525,8 +491,7 @@ export async function getRoomRecommend() {
           description:
             'หนังสือ หนังสือนิยาย ภาษาไทย ภาษาจีน ภาษาอังกฤษ ปรัชญา ประวัติศาสตร์',
           link_url: 'https://pantip.com/forum/library',
-          room_icon_url:
-            'https://ptcdn.info/mobile/icon_room/pt-forum-library.svg',
+          room_icon_url: 'icon/37.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,
@@ -539,7 +504,7 @@ export async function getRoomRecommend() {
           description:
             'ศิลปะ ภาพวาด ประวัติศาสตร์ศิลป์ สื่อประสม Graphic Design',
           link_url: 'https://pantip.com/forum/art',
-          room_icon_url: 'https://ptcdn.info/mobile/icon_room/pt-forum-art.svg',
+          room_icon_url: 'icon/38.svg',
           is_pinned: false,
           pinned_time: null,
           order: null,

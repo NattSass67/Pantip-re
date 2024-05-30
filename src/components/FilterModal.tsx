@@ -45,7 +45,7 @@ const FilterModal = () => {
           setClicked(true);
         }}
         aria-hidden="true"
-        className="flex w-24 flex-row items-center justify-center rounded-lg border border-gray-400 p-2 transition hover:scale-105"
+        className="flex w-24 flex-row items-center justify-center rounded-lg border border-gray-400 p-2 shadow transition hover:scale-105"
       >
         <svg
           width="24px"

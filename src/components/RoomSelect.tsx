@@ -44,10 +44,10 @@ const RoomSelect = () => {
         key={object.id}
         className="flex w-20 flex-none flex-col items-center justify-center border-gray-200 transition ease-in-out hover:-translate-y-1 hover:border-b-4 hover:bg-gray-100 "
       >
-        <div className="w-10 rounded-md bg-zinc-800">
+        <div className="w-10 rounded-md">
           <img src={object.room_icon_url} className="w-10" alt="icon" />
         </div>
-        <p className="text-center text-[12px] font-semibold text-gray-500">
+        <p className="text-center text-[10px] font-semibold">
           {object.name_en}
         </p>
       </a>
