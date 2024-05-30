@@ -185,7 +185,7 @@ const FilterModal = () => {
           <div className="fixed inset-0 z-30 flex items-center justify-center bg-black bg-opacity-50">
             <div className="no-scrollbar mb-16 flex h-[500px] max-h-full w-full max-w-md flex-col overflow-hidden overflow-y-auto rounded-2xl bg-white p-8 shadow-lg">
               <div className="flex flex-row justify-between text-xl font-semibold">
-                Tag filter{' '}
+                <div className="mx-2">Tag filter</div>
                 <svg
                   width="32px"
                   height="32px"
@@ -220,11 +220,11 @@ const FilterModal = () => {
               </div>
               <br />
               <hr />
-              <div className="m-8 flex flex-col">{checkTagList}</div>
+              <div className="mx-2 my-8 flex flex-col">{checkTagList}</div>
               <div>
                 <hr />
                 <div
-                  className="m-2 flex w-24 flex-col items-center justify-center rounded-md font-semibold hover:bg-gray-200"
+                  className="my-2 flex w-24 flex-col items-center justify-center rounded-md font-semibold hover:bg-gray-200"
                   onClick={() => {
                     dispatch(setTagChoosen(''));
                   }}

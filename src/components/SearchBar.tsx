@@ -12,7 +12,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="z-20 flex w-full max-w-lg items-center justify-center rounded-full">
+    <div className="z-20 flex w-full max-w-lg items-center justify-center rounded-full border border-gray-300 shadow-xl">
       <input
         type="text"
         value={searchString}
@@ -20,24 +20,21 @@ const SearchBar = () => {
           setSearchString(e.target.value);
         }}
         placeholder="Search..."
-        className="w-full rounded-full px-4 py-2 shadow-xl focus:outline-none"
+        className="w-full rounded-full p-4 focus:outline-none"
       />
       {/* eslint-disable-next-line react/button-has-type */}
       <button
         onClick={submit}
-        className="ml-2 rounded-full bg-stone-900 px-4 py-2 text-white transition hover:scale-110"
+        className="mr-2 rounded-full bg-zinc-800 p-3 text-white transition hover:scale-110"
       >
         <svg
-          fill="#ffffff"
-          height="24px"
-          width="24px"
-          version="1.1"
-          id="Capa_1"
+          width="20px"
+          height="20px"
+          viewBox="0 0 24.00 24.00"
+          fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 488.4 488.4"
-          xmlSpace="preserve"
           stroke="#ffffff"
+          strokeWidth="0.672"
         >
           <g id="SVGRepo_bgCarrier" strokeWidth="0" />
           <g
@@ -47,13 +44,12 @@ const SearchBar = () => {
           />
           <g id="SVGRepo_iconCarrier">
             {' '}
-            <g>
-              {' '}
-              <g>
-                {' '}
-                <path d="M0,203.25c0,112.1,91.2,203.2,203.2,203.2c51.6,0,98.8-19.4,134.7-51.2l129.5,129.5c2.4,2.4,5.5,3.6,8.7,3.6 s6.3-1.2,8.7-3.6c4.8-4.8,4.8-12.5,0-17.3l-129.6-129.5c31.8-35.9,51.2-83,51.2-134.7c0-112.1-91.2-203.2-203.2-203.2 S0,91.15,0,203.25z M381.9,203.25c0,98.5-80.2,178.7-178.7,178.7s-178.7-80.2-178.7-178.7s80.2-178.7,178.7-178.7 S381.9,104.65,381.9,203.25z" />{' '}
-              </g>{' '}
-            </g>{' '}
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M17.0392 15.6244C18.2714 14.084 19.0082 12.1301 19.0082 10.0041C19.0082 5.03127 14.9769 1 10.0041 1C5.03127 1 1 5.03127 1 10.0041C1 14.9769 5.03127 19.0082 10.0041 19.0082C12.1301 19.0082 14.084 18.2714 15.6244 17.0392L21.2921 22.707C21.6828 23.0977 22.3163 23.0977 22.707 22.707C23.0977 22.3163 23.0977 21.6828 22.707 21.2921L17.0392 15.6244ZM10.0041 17.0173C6.1308 17.0173 2.99087 13.8774 2.99087 10.0041C2.99087 6.1308 6.1308 2.99087 10.0041 2.99087C13.8774 2.99087 17.0173 6.1308 17.0173 10.0041C17.0173 13.8774 13.8774 17.0173 10.0041 17.0173Z"
+              fill="#ffffff"
+            />{' '}
           </g>
         </svg>
       </button>

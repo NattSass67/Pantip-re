@@ -42,12 +42,12 @@ const RoomSelect = () => {
       <a
         href={object.link_url}
         key={object.id}
-        className="flex w-20 flex-none flex-col items-center justify-center border-gray-200 p-2 transition ease-in-out hover:-translate-y-1 hover:border-b-4 hover:bg-gray-100 "
+        className="flex w-20 flex-none flex-col items-center justify-center border-gray-200 transition ease-in-out hover:-translate-y-1 hover:border-b-4 hover:bg-gray-100 "
       >
-        <div className="w-12 rounded-md bg-stone-900">
-          <img src={object.room_icon_url} className="w-12" alt="icon" />
+        <div className="w-10 rounded-md bg-zinc-800">
+          <img src={object.room_icon_url} className="w-10" alt="icon" />
         </div>
-        <p className="text-center text-[10px] font-semibold text-gray-500">
+        <p className="text-center text-[12px] font-semibold text-gray-500">
           {object.name_en}
         </p>
       </a>
@@ -55,14 +55,14 @@ const RoomSelect = () => {
   });
 
   return (
-    <div className="relative mb-4 flex flex-col">
-      <div className="absolute left-6 top-0 z-10 h-24 w-16 bg-gradient-to-r from-white">
+    <div className="relative mt-4 flex flex-col">
+      <div className="absolute left-6 top-0 z-10 h-20 w-16 bg-gradient-to-r from-white">
         {' '}
       </div>
       <button
         onClick={scrollLeft}
         aria-label="Save"
-        className="absolute left-0 top-[25px] z-10 rounded-full bg-gray-200 p-2 transition hover:scale-110"
+        className="absolute left-0 top-[20px] z-10 rounded-full bg-gray-200 p-2 transition hover:scale-110"
       >
         <svg
           width="16px"
@@ -89,18 +89,18 @@ const RoomSelect = () => {
 
       <div
         ref={scrollContainerRef}
-        className="no-scrollbar mx-8 flex h-24 flex-row overflow-x-auto "
+        className="no-scrollbar mx-8 flex h-20 flex-row overflow-x-auto "
       >
         {roomList}
       </div>
 
-      <div className="absolute right-6 top-0 z-10 h-24 w-16 bg-gradient-to-l from-white">
+      <div className="absolute right-6 top-0 z-10 h-20 w-16 bg-gradient-to-l from-white">
         {' '}
       </div>
       <button
         onClick={scrollRight}
         aria-label="Save"
-        className="absolute right-0 top-[25px] z-10 rounded-full bg-gray-200 p-2 transition hover:scale-110"
+        className="absolute right-0 top-[20px] z-10 rounded-full bg-gray-200 p-2 transition hover:scale-110"
       >
         <svg
           width="16px"

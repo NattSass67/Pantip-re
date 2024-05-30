@@ -28,7 +28,7 @@ interface Content {
 const formatDate = (isoString: string) => {
   const date = new Date(isoString);
   const day = date.getDate();
-  const month = date.toLocaleString('default', { month: 'long' }); // Full month name
+  const month = date.toLocaleString('en-US', { month: 'long' }); // Full month name
   const year = date.getFullYear();
 
   return `${day} ${month} ${year}`;
@@ -43,16 +43,16 @@ const Highlight = () => {
       <div className="flex flex-row items-center justify-center gap-x-4">
         {' '}
         <span className="relative flex size-8">
-          <span className="absolute inline-flex size-full animate-ping rounded-full bg-stone-900 opacity-75" />
-          <span className="relative inline-flex size-8 rounded-full bg-stone-900" />
+          <span className="absolute inline-flex size-full animate-ping rounded-full bg-zinc-400 opacity-75" />
+          <span className="relative inline-flex size-8 rounded-full bg-zinc-400" />
         </span>
         <span className="relative flex size-8">
-          <span className="absolute inline-flex size-full animate-ping rounded-full bg-stone-900 opacity-75" />
-          <span className="relative inline-flex size-8 rounded-full bg-stone-900" />
+          <span className="absolute inline-flex size-full animate-ping rounded-full bg-zinc-500 opacity-75" />
+          <span className="relative inline-flex size-8 rounded-full bg-zinc-500" />
         </span>
         <span className="relative flex size-8">
-          <span className="absolute inline-flex size-full animate-ping rounded-full bg-stone-900 opacity-75" />
-          <span className="relative inline-flex size-8 rounded-full bg-stone-900" />
+          <span className="absolute inline-flex size-full animate-ping rounded-full bg-zinc-600 opacity-75" />
+          <span className="relative inline-flex size-8 rounded-full bg-zinc-600" />
         </span>
       </div>
       <div className="flex flex-row items-center justify-center text-lg font-semibold">
@@ -84,20 +84,20 @@ const Highlight = () => {
         <p className="truncate p-2 text-base font-semibold">
           {object.name ? object.name : object.title}
         </p>
-        <div className="mb-1 flex h-6 flex-row flex-wrap gap-1 overflow-hidden px-4">
+        <div className="mb-1 flex h-4 flex-row flex-wrap gap-1 overflow-hidden px-2">
           {' '}
           {object.tags.map((elem, index) => {
             return (
               <div
                 key={index}
-                className="flex-none rounded-full bg-white p-1 text-[12px] text-gray-500"
+                className="flex-none rounded-full bg-white text-[12px] text-gray-500"
               >
                 #{elem.name}
               </div>
             );
           })}
         </div>
-        <div className="mb-1 flex flex-row flex-wrap gap-1 px-4 text-[10px]">
+        <div className="mb-1 flex flex-row flex-wrap gap-1 p-2 text-[10px]">
           {' '}
           {formatDate(object.created_time)}
         </div>
@@ -107,7 +107,7 @@ const Highlight = () => {
             <svg
               width="16px"
               height="16px"
-              viewBox="0 -0.5 25 25"
+              viewBox="0 -0.5 25 22"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -131,7 +131,7 @@ const Highlight = () => {
             <svg
               width="16px"
               height="16px"
-              viewBox="0 0 24 24"
+              viewBox="0 0 30 22"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
