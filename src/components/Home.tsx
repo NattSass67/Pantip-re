@@ -63,7 +63,7 @@ export default function Home() {
       </div>
 
       {/* Spacer to push content below fixed header */}
-      <div id="transition-div" className="h-64 md:h-48" />
+      <div id="transition-div" className="h-48" />
 
       <Highlight />
     </div>
