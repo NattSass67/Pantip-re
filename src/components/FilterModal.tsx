@@ -45,11 +45,11 @@ const FilterModal = () => {
           setClicked(true);
         }}
         aria-hidden="true"
-        className="flex w-24 flex-row items-center justify-center rounded-lg border border-gray-400 p-2 shadow transition hover:scale-105"
+        className="flex h-full flex-row items-center justify-center gap-x-2 rounded-full bg-white px-4 py-2 font-semibold shadow transition hover:scale-105 hover:border hover:border-gray-200"
       >
         <svg
-          width="24px"
-          height="24px"
+          width="16px"
+          height="16px"
           viewBox="0 0 24 24"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -170,7 +170,7 @@ const FilterModal = () => {
             </g>{' '}
           </g>
         </svg>
-        <div className="text-sm">Filters</div>
+        <div className="hidden text-sm sm:flex">Filters</div>
       </div>
       <div onClick={() => {}} aria-hidden="true">
         <Transition
@@ -185,11 +185,11 @@ const FilterModal = () => {
           <div className="fixed inset-0 z-30 flex items-center justify-center bg-black bg-opacity-50">
             <TransitionChild
               enter="transition ease-in-out duration-300"
-              enterFrom="translate-y-1/2"
+              enterFrom="translate-y-4"
               enterTo="translate-y-0"
               leave="transition ease-in-out duration-300"
               leaveFrom="translate-y-0"
-              leaveTo="translate-y-1/2"
+              leaveTo="translate-y-4"
             >
               <div className="no-scrollbar mb-16 flex h-[500px] max-h-full w-full max-w-md flex-col overflow-hidden overflow-y-auto rounded-2xl bg-white p-8 shadow-lg">
                 <div className="flex flex-row justify-between text-xl font-semibold">

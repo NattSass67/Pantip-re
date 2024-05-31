@@ -56,7 +56,14 @@ export default function Home() {
           />
           <SearchBar />
           <div className="flex flex-row gap-x-3">
-            <FilterModal />
+            <div className="fixed left-4 top-[270px] z-50 sm:hidden">
+              {' '}
+              <FilterModal />
+            </div>
+            <div className="hidden sm:flex ">
+              {' '}
+              <FilterModal />
+            </div>
             <Dropdown />
           </div>
         </div>
@@ -65,17 +72,8 @@ export default function Home() {
 
       {/* Spacer to push content below fixed header */}
       <div id="transition-div" className="h-64 lg:h-48" />
+
       <Highlight />
-      <div className="grid grid-cols-1 md:grid-cols-3">
-        {/* <div className="col-span-1 md:col-span-2">
-          <PantipPick />
-          <PantipHitz />
-        </div>
-        <div className="hidden md:col-span-1 md:flex">
-          <TagHit />
-        </div> */}
-      </div>
-      <div> </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import {
 const Dropdown = () => {
   return (
     <Popover>
-      <PopoverButton className="flex flex-row items-center justify-center gap-x-2 rounded-full p-3 text-sm/6 font-semibold shadow hover:border hover:border-gray-200 focus:outline-none">
+      <PopoverButton className="flex flex-row items-center justify-center gap-x-2 rounded-full p-3 text-sm/6 font-semibold shadow transition hover:scale-105 hover:border hover:border-gray-200 focus:outline-none">
         <svg
           width="12px"
           height="12px"
@@ -78,34 +78,22 @@ const Dropdown = () => {
         >
           <div className="p-3">
             <a
-              className="block rounded-lg px-3 py-2 transition hover:bg-white/5"
-              href="/"
+              className="block rounded-lg px-3 py-2 transition hover:bg-gray-100"
+              href="https://pantip.com/login"
             >
-              <p className="font-semibold">Insights</p>
-              <p className="">Measure actions your users take</p>
+              <p className="font-semibold">Register/Login</p>
             </a>
             <a
-              className="block rounded-lg px-3 py-2 transition hover:bg-white/5"
+              className="block rounded-lg px-3 py-2 transition hover:bg-gray-100"
               href="/"
             >
-              <p className="font-semibold ">Automations</p>
-              <p className="">Create your own targeted content</p>
+              <p className="font-semibold ">Activities</p>
             </a>
             <a
-              className="block rounded-lg px-3 py-2 transition hover:bg-white/5"
-              href="/"
+              className="block rounded-lg px-3 py-2 transition hover:bg-gray-100"
+              href="https://pantip.com/home/feed"
             >
-              <p className="font-semibold ">Reports</p>
-              <p className="">Keep track of your growth</p>
-            </a>
-          </div>
-          <div className="p-3">
-            <a
-              className="block rounded-lg px-3 py-2 transition hover:bg-white/5"
-              href="/"
-            >
-              <p className="font-semibold">Documentation</p>
-              <p className="">Start integrating products and tools</p>
+              <p className="font-semibold ">My Feed</p>
             </a>
           </div>
         </PopoverPanel>
