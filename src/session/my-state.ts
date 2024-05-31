@@ -27,6 +27,7 @@ import {
   fetchSuggestTopicBehavior,
   fetchSuggestTopicPopular,
   fetchTaghitContent,
+  setReachTop,
   setTagChoosen,
 } from './sessionReducers';
 
@@ -67,6 +68,7 @@ export const fetchContent = () => {
         dispatch(fetchSuggestTopicPopular(suggestPopular));
         dispatch(fetchPickPantip(pick));
         dispatch(fetchHitzPantip(hitz));
+        dispatch(setReachTop(true));
         setTimeout(async () => {
           dispatch(fetchSuccess());
           // Set success after 2000 milliseconds

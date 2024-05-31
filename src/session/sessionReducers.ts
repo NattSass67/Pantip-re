@@ -12,6 +12,7 @@ interface SessionState {
   pickPantip: any;
   hitzPantip: any;
   tagChoosen: string;
+  reachTop: boolean;
   loading: boolean; // Add loading state to track API request status
 }
 
@@ -27,6 +28,7 @@ const initialState: SessionState = {
   pickPantip: null,
   hitzPantip: null,
   tagChoosen: '',
+  reachTop: true,
   loading: false, // Initialize loading state
 };
 
@@ -74,6 +76,9 @@ const sessionSlice = createSlice({
     setTagChoosen(state, action) {
       state.tagChoosen = action.payload;
     },
+    setReachTop(state, action) {
+      state.reachTop = action.payload;
+    },
   },
 });
 
@@ -91,6 +96,7 @@ export const {
   fetchPickPantip,
   fetchHitzPantip,
   setTagChoosen,
+  setReachTop,
 } = sessionSlice.actions;
 
 export default sessionSlice.reducer;
