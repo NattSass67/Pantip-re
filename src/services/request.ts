@@ -905,3 +905,42 @@ export async function getFilterByTag(name: string) {
     return null;
   }
 }
+
+export async function getFilterByRoom(name: string) {
+  try {
+    const response = await fetch(
+      `https://pantip.com/api/forum-service/forum/room_topic_trend?room=${name}&limit=20`,
+      {
+        headers: {
+          accept: 'application/json, text/plain, */*',
+          'accept-language': 'en-US,en;q=0.9,th;q=0.8,pt;q=0.7',
+          'cache-control': 'no-cache',
+          pragma: 'no-cache',
+          priority: 'u=1, i',
+          ptauthorize: 'Basic dGVzdGVyOnRlc3Rlcg==',
+          'sec-ch-ua':
+            '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',
+          'sec-ch-ua-mobile': '?1',
+          'sec-ch-ua-platform': '"Android"',
+          'sec-fetch-dest': 'empty',
+          'sec-fetch-mode': 'cors',
+          'sec-fetch-site': 'same-origin',
+          cookie:
+            'pantip_visitc=se4qnrwPrzXJ7pc72; iUUID=3ddd0419819c0ad284b7f983f4be0159; __gsas=ID=60c4347c7f3f7dff:T=1716788732:RT=1716788732:S=ALNI_MbYInzrFu0Fxhdc7o06Hlq-wGGN-g; ka_iid=XBVKAtnykRFEQURPsaNHVR; _gid=GA1.2.92686379.1717054405; _cc_id=e4e1d3b1c1d182f23be8c438163b6560; panoramaId_expiry=1717208349041; panoramaId=4b93d727fe84fa0f32af3d00eeb2a9fb927a68550cc4307380163ccc0fd57bb4; panoramaIdType=panoDevice; PHPSESSID=38k9jk5erifrpld8ov27cba8o2; cto_bundle=0q9Nql9GeTdRMVRLT3VCZ1VNa1dLdkQlMkI2Q2clMkZxU2YxckVFeTVvbU03RnoyMkgwSXVDN1ZiWW9XZ0N1aDVVWCUyRm1DbDVYaFZVS0J0QVZUT0JiQk9lOEFpV3VpWFM4V0o1TmpOWWx2Skl4JTJCbnkwdHV6WUkxazdFOVNzeWVHMnRmalNTelp5a0MxSXFHQkdOQUZKRXJ4RFJybVRHZyUzRCUzRA; pantip_ha=20240531094342; innity.dmp.cks.innity=1; innity.dmp.254.sess.id=166818236.254.1717162082654; freq.5f73e63e47e7040e00000000=1; ka_sid=VGrU4QFBXs3DAnDywwQCif; real_referer=%3A%2F%2Fpantip.com%2Fs%2F7nwZU; rlr=42715923; __gads=ID=e08ef4e7219dea7b:T=1716816144:RT=1717162090:S=ALNI_MbHUUbiUa9UJaUphWqk96HlMCtO_w; __gpi=UID=00000e305824b17a:T=1716816144:RT=1717162090:S=ALNI_Mb0Et7mKwMS8MuGEVwpDBBfVC3CZg; __eoi=ID=17b6e50c574e34a5:T=1716816144:RT=1717162090:S=AA-AfjYlD-gQQUuL8tmGNWtgFehD; pantip_sessions=mipZR3fclKxWlRV9f1Xu1vezviz6j3tRq%2B7QtVzRX1wKzsKrSUWo2u956ku0XTadeq6QyTaluWZWXXC3SZ3HpwmUY6owaKfZIgXywN%2Fp%2BB%2BgbVGCRCFvbE5ueVVx5f3YQXoxQUSvznmCEQjrrf41UXUDXcrzk3KIFfuAKdPXVKN1qasZVv54nnR76mZ3bTb2YZehzPqbXtWVgn1COfXhXpkAoeCvWwPXIkub8PjLZFvHQigX2%2BLIXh%2BcMKX5hL96CK0PUJjuLMsPueDns9RNCnmFW8le8YrszEDDe8bfa%2BD80WirjGp0UN9LF7uUdWOiGT2H9ZPSoaOygXMv%2BBBhUg%3D%3D; innity.dmp.254.sess=6.1717162082654.1717162174350.1717162461119; _dc_gtm_UA-10478864-2=1; _ga_ZMC2WGXL4Z=GS1.1.1717162082.9.1.1717162474.19.0.0; _ga=GA1.1.1157981782.1716788731',
+          Referer: `https://pantip.com/forum/${name}`,
+          'Referrer-Policy': 'strict-origin-when-cross-origin',
+        },
+        body: null,
+        method: 'GET',
+      },
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    return null;
+  }
+}

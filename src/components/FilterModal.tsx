@@ -6,7 +6,7 @@
 import { Transition, TransitionChild } from '@headlessui/react';
 import { useState } from 'react';
 
-import { getDataTagChoosen } from '@/session/my-state';
+import { getDataRoomChoosen } from '@/session/my-state';
 import { setTagChoosen } from '@/session/sessionReducers';
 import { useAppDispatch, useAppSelector } from '@/session/store';
 
@@ -31,7 +31,7 @@ const FilterModal = () => {
   const onClose = () => {
     setClicked(false);
     // dispatch fetch
-    dispatch(getDataTagChoosen(tag));
+    dispatch(getDataRoomChoosen(tag));
   };
 
   const checkTagList = content?.map((object, index) => {

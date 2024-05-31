@@ -3,7 +3,7 @@
 import {
   getAnnounce,
   getClub,
-  getFilterByTag,
+  getFilterByRoom,
   getHighlight,
   getPantipHitz,
   getPantipPick,
@@ -28,6 +28,7 @@ import {
   fetchSuggestTopicPopular,
   fetchTaghitContent,
   setReachTop,
+  setRoomChoosen,
   setTagChoosen,
 } from './sessionReducers';
 
@@ -45,6 +46,7 @@ export const fetchContent = () => {
       const suggestPopular = await getSuggestTopicPopular();
       const pick = await getPantipPick();
       const hitz = await getPantipHitz();
+      const roomContent = await getFilterByRoom('siliconvalley');
       if (
         sidebar === null ||
         highlight === null ||
@@ -60,7 +62,7 @@ export const fetchContent = () => {
       } else {
         dispatch(fetchRoomRecommend(room));
         dispatch(fetchSidebarContent(sidebar));
-        dispatch(fetchHighlightContent(pick.data));
+        dispatch(fetchHighlightContent(roomContent.data));
         dispatch(fetchAnnounceContent(announce));
         dispatch(fetchClubContent(club));
         dispatch(fetchTaghitContent(taghit));
@@ -69,6 +71,7 @@ export const fetchContent = () => {
         dispatch(fetchPickPantip(pick));
         dispatch(fetchHitzPantip(hitz));
         dispatch(setReachTop(true));
+        dispatch(setRoomChoosen('siliconvalley'));
         setTimeout(async () => {
           dispatch(fetchSuccess());
           // Set success after 2000 milliseconds
@@ -81,15 +84,15 @@ export const fetchContent = () => {
   };
 };
 
-export const getDataTagChoosen = (tag: string) => {
+export const getDataRoomChoosen = (room: string) => {
   return async (dispatch: any) => {
     dispatch(fetchStart()); // Dispatch loginStart action to set loading state
     try {
-      if (tag === '') {
+      if (room === '') {
         dispatch(fetchSuccess());
         return;
       }
-      const res = await getFilterByTag(tag);
+      const res = await getFilterByRoom(room);
 
       dispatch(fetchHighlightContent(res.data));
       setTimeout(async () => {

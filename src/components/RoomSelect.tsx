@@ -8,10 +8,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useEffect, useRef } from 'react';
 
-import { useAppSelector } from '@/session/store';
+import { getDataRoomChoosen } from '@/session/my-state';
+import { setRoomChoosen } from '@/session/sessionReducers';
+import { useAppDispatch, useAppSelector } from '@/session/store';
 
 interface Content {
   id: number;
+  slug: string;
   name_en: string;
   link_url: string;
   room_icon_url: string;
@@ -23,7 +26,14 @@ const RoomSelect = () => {
   );
   useEffect(() => {}, [content]);
 
+  const dispatch = useAppDispatch();
+  const choosedRoom = useAppSelector((state) => state.mySession.roomChoosen);
+
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const onRoomClick = (name: string) => {
+    dispatch(getDataRoomChoosen(name));
+    dispatch(setRoomChoosen(name));
+  };
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -39,10 +49,13 @@ const RoomSelect = () => {
 
   const roomList = content?.map((object) => {
     return (
-      <a
-        href={object.link_url}
+      <div
+        onClick={() => {
+          onRoomClick(object.slug);
+        }}
+        aria-hidden="true"
         key={object.id}
-        className="flex w-20 flex-none flex-col items-center justify-center border-gray-200 transition ease-in-out hover:-translate-y-1 hover:border-b-4 hover:bg-gray-100 "
+        className={`flex w-20 flex-none flex-col items-center justify-center transition ease-in-out hover:-translate-y-1 ${choosedRoom === object.slug ? 'border-b-2 border-zinc-800 opacity-100' : 'opacity-90 hover:opacity-100'}`}
       >
         <div className="w-10 rounded-md">
           <img src={object.room_icon_url} className="w-10" alt="icon" />
@@ -50,13 +63,13 @@ const RoomSelect = () => {
         <p className="text-center text-[10px] font-semibold">
           {object.name_en}
         </p>
-      </a>
+      </div>
     );
   });
 
   return (
     <div className="relative mt-4 flex flex-col">
-      <div className="absolute left-6 top-0 z-10 h-20 w-16 bg-gradient-to-r from-white">
+      <div className="absolute left-6 top-0 z-10 h-20 w-12 bg-gradient-to-r from-white">
         {' '}
       </div>
       <button
@@ -94,7 +107,7 @@ const RoomSelect = () => {
         {roomList}
       </div>
 
-      <div className="absolute right-6 top-0 z-10 h-20 w-16 bg-gradient-to-l from-white">
+      <div className="absolute right-6 top-0 z-10 h-20 w-12 bg-gradient-to-l from-white">
         {' '}
       </div>
       <button

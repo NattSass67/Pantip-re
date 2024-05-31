@@ -75,7 +75,7 @@ const Highlight = () => {
                 ? (object.image_url[1] as string)
                 : object.thumbnail_url
                   ? object.thumbnail_url
-                  : 'empty.jpg'
+                  : 'sample.jpg'
             }
             className="w-full"
             alt="icon"

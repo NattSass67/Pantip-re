@@ -4,11 +4,8 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import { useAppSelector } from '@/session/store';
-
 const SearchBar = () => {
   const [searchString, setSearchString] = useState('');
-  const reachTop = useAppSelector((state) => state.mySession.reachTop);
   const router = useRouter();
   const submit = () => {
     router.push(`https://pantip.com/search?q=${searchString}`);

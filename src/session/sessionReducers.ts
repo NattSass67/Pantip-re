@@ -12,6 +12,7 @@ interface SessionState {
   pickPantip: any;
   hitzPantip: any;
   tagChoosen: string;
+  roomChoosen: string;
   reachTop: boolean;
   loading: boolean; // Add loading state to track API request status
 }
@@ -27,6 +28,7 @@ const initialState: SessionState = {
   suggestTopicPopular: null,
   pickPantip: null,
   hitzPantip: null,
+  roomChoosen: '',
   tagChoosen: '',
   reachTop: true,
   loading: false, // Initialize loading state
@@ -79,6 +81,9 @@ const sessionSlice = createSlice({
     setReachTop(state, action) {
       state.reachTop = action.payload;
     },
+    setRoomChoosen(state, action) {
+      state.roomChoosen = action.payload;
+    },
   },
 });
 
@@ -97,6 +102,7 @@ export const {
   fetchHitzPantip,
   setTagChoosen,
   setReachTop,
+  setRoomChoosen,
 } = sessionSlice.actions;
 
 export default sessionSlice.reducer;
